@@ -1,11 +1,16 @@
-import { Link } from 'react-router-dom';
+import "./NavBar.css";
+import { NavLink } from "react-router-dom";
 
-export default function NavBar() {
+export default function NavBar({ user }) {
   return (
-    <nav>
-      <Link to="/orders">Order History</Link>
-      &nbsp; | &nbsp;
-      <Link to="/orders/new">New Order</Link>
-    </nav>
+    <div className="flex-container">
+      <NavLink className="flex-item" to="/">
+        <button className="btn fourth">Movies</button>
+      </NavLink>
+      <NavLink className="flex-item" to="/actors">
+        <button className="btn fourth">Actors</button>
+      </NavLink>
+      <p className="flex-item">Welcome, {user}!</p>
+    </div>
   );
 }
